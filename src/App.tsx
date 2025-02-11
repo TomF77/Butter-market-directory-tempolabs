@@ -1,7 +1,9 @@
 import { Suspense } from "react";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
-import History from "./components/BusinessDirectory/History";
+import WhatsHere from "./components/pages/WhatsHere";
+import WhatsOn from "./components/pages/WhatsOn";
+import WhatsNearby from "./components/pages/WhatsNearby";
 import routes from "tempo-routes";
 
 function App() {
@@ -11,7 +13,9 @@ function App() {
         {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/history" element={<History />} />
+          <Route path="/whats-here" element={<WhatsHere />} />
+          <Route path="/whats-on" element={<WhatsOn />} />
+          <Route path="/whats-nearby" element={<WhatsNearby />} />
           {import.meta.env.VITE_TEMPO === "true" && (
             <Route path="/tempobook/*" />
           )}
